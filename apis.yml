@@ -1,0 +1,38 @@
+aid: hoverfly
+name: Hoverfly
+description: >-
+  Hoverfly is an open source API simulation tool for creating realistic mock services and capturing-replaying HTTP traffic for testing.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Testing
+  - Mocking
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/hoverfly/refs/heads/main/apis.yml
+created: '2026-03-25'
+modified: '2026-03-25'
+specificationVersion: '0.19'
+apis:
+  - aid: hoverfly:hoverfly
+    name: Hoverfly
+    description: >-
+      Hoverfly is an open source API simulation tool for creating realistic mock services and capturing-replaying HTTP traffic for testing.
+    humanURL: https://hoverfly.io
+    tags:
+      - Testing
+      - Mocking
+    properties:
+      - type: Documentation
+        url: https://docs.hoverfly.io
+      - type: GitHub Repository
+        url: https://github.com/SpectoLabs/hoverfly
+common:
+  - type: Website
+    url: https://hoverfly.io
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: GitHub Organization
+    url: https://github.com/SpectoLabs/hoverfly
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
