@@ -5,8 +5,8 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Testing
   - Mocking
+  - Testing
 url: >-
   https://raw.githubusercontent.com/api-evangelist/hoverfly/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -19,8 +19,8 @@ apis:
       Hoverfly is an open source API simulation tool for creating realistic mock services and capturing-replaying HTTP traffic for testing.
     humanURL: https://hoverfly.io
     tags:
-      - Testing
       - Mocking
+      - Testing
     properties:
       - type: Documentation
         url: https://docs.hoverfly.io
