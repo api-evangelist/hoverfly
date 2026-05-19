@@ -1,0 +1,162 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hoverfly Admin API — State
+  description: 'Hoverfly Admin API — State. 4 operations. Lead operation: Get state. Self-contained Naftiko capability covering
+    one Hoverfly business surface.'
+  tags:
+  - Hoverfly
+  - State
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOVERFLY_API_KEY: HOVERFLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hoverfly-state
+    baseUri: http://localhost:8888
+    description: Hoverfly Admin API — State business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v2-state
+      path: /api/v2/state
+      operations:
+      - name: getstate
+        method: GET
+        description: Get state
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: replacestate
+        method: PUT
+        description: Replace state
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patchstate
+        method: PATCH
+        description: Patch state
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: clearstate
+        method: DELETE
+        description: Clear state
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: hoverfly-state-rest
+    port: 8080
+    description: REST adapter for Hoverfly Admin API — State. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v2/state
+      name: api-v2-state
+      description: REST surface for api-v2-state.
+      operations:
+      - method: GET
+        name: getstate
+        description: Get state
+        call: hoverfly-state.getstate
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: replacestate
+        description: Replace state
+        call: hoverfly-state.replacestate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchstate
+        description: Patch state
+        call: hoverfly-state.patchstate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: clearstate
+        description: Clear state
+        call: hoverfly-state.clearstate
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hoverfly-state-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Hoverfly Admin API — State. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-state
+      description: Get state
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hoverfly-state.getstate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: replace-state
+      description: Replace state
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: hoverfly-state.replacestate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patch-state
+      description: Patch state
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: hoverfly-state.patchstate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: clear-state
+      description: Clear state
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hoverfly-state.clearstate
+      outputParameters:
+      - type: object
+        mapping: $.

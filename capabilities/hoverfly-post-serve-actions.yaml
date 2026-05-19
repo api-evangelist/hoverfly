@@ -1,0 +1,143 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hoverfly Admin API — Post-Serve Actions
+  description: 'Hoverfly Admin API — Post-Serve Actions. 3 operations. Lead operation: List post-serve actions. Self-contained
+    Naftiko capability covering one Hoverfly business surface.'
+  tags:
+  - Hoverfly
+  - Post-Serve Actions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOVERFLY_API_KEY: HOVERFLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hoverfly-post-serve-actions
+    baseUri: http://localhost:8888
+    description: Hoverfly Admin API — Post-Serve Actions business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v2-hoverfly-post-serve-action
+      path: /api/v2/hoverfly/post-serve-action
+      operations:
+      - name: listpostserveactions
+        method: GET
+        description: List post-serve actions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: upsertpostserveaction
+        method: PUT
+        description: Create or update post-serve action
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v2-hoverfly-post-serve-action-actionName
+      path: /api/v2/hoverfly/post-serve-action/{actionName}
+      operations:
+      - name: deletepostserveaction
+        method: DELETE
+        description: Delete post-serve action
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: actionName
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: hoverfly-post-serve-actions-rest
+    port: 8080
+    description: REST adapter for Hoverfly Admin API — Post-Serve Actions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/v2/hoverfly/post-serve-action
+      name: api-v2-hoverfly-post-serve-action
+      description: REST surface for api-v2-hoverfly-post-serve-action.
+      operations:
+      - method: GET
+        name: listpostserveactions
+        description: List post-serve actions
+        call: hoverfly-post-serve-actions.listpostserveactions
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: upsertpostserveaction
+        description: Create or update post-serve action
+        call: hoverfly-post-serve-actions.upsertpostserveaction
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v2/hoverfly/post-serve-action/{actionname}
+      name: api-v2-hoverfly-post-serve-action-actionname
+      description: REST surface for api-v2-hoverfly-post-serve-action-actionName.
+      operations:
+      - method: DELETE
+        name: deletepostserveaction
+        description: Delete post-serve action
+        call: hoverfly-post-serve-actions.deletepostserveaction
+        with:
+          actionName: rest.actionName
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hoverfly-post-serve-actions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Hoverfly Admin API — Post-Serve Actions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-post-serve-actions
+      description: List post-serve actions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hoverfly-post-serve-actions.listpostserveactions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-update-post-serve-action
+      description: Create or update post-serve action
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: hoverfly-post-serve-actions.upsertpostserveaction
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-post-serve-action
+      description: Delete post-serve action
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hoverfly-post-serve-actions.deletepostserveaction
+      with:
+        actionName: tools.actionName
+      outputParameters:
+      - type: object
+        mapping: $.

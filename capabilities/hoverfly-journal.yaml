@@ -1,0 +1,263 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hoverfly Admin API — Journal
+  description: 'Hoverfly Admin API — Journal. 6 operations. Lead operation: Get journal. Self-contained Naftiko capability
+    covering one Hoverfly business surface.'
+  tags:
+  - Hoverfly
+  - Journal
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOVERFLY_API_KEY: HOVERFLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hoverfly-journal
+    baseUri: http://localhost:8888
+    description: Hoverfly Admin API — Journal business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v2-journal
+      path: /api/v2/journal
+      operations:
+      - name: getjournal
+        method: GET
+        description: Get journal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        - name: from
+          in: query
+          type: integer
+        - name: to
+          in: query
+          type: integer
+        - name: sort
+          in: query
+          type: string
+      - name: filterjournal
+        method: POST
+        description: Filter journal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: clearjournal
+        method: DELETE
+        description: Clear journal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v2-journal-index
+      path: /api/v2/journal/index
+      operations:
+      - name: listjournalindexes
+        method: GET
+        description: List journal indexes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createjournalindex
+        method: POST
+        description: Create journal index
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v2-journal-index-indexName
+      path: /api/v2/journal/index/{indexName}
+      operations:
+      - name: deletejournalindex
+        method: DELETE
+        description: Delete journal index
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: indexName
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: hoverfly-journal-rest
+    port: 8080
+    description: REST adapter for Hoverfly Admin API — Journal. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v2/journal
+      name: api-v2-journal
+      description: REST surface for api-v2-journal.
+      operations:
+      - method: GET
+        name: getjournal
+        description: Get journal
+        call: hoverfly-journal.getjournal
+        with:
+          limit: rest.limit
+          offset: rest.offset
+          from: rest.from
+          to: rest.to
+          sort: rest.sort
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: filterjournal
+        description: Filter journal
+        call: hoverfly-journal.filterjournal
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: clearjournal
+        description: Clear journal
+        call: hoverfly-journal.clearjournal
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v2/journal/index
+      name: api-v2-journal-index
+      description: REST surface for api-v2-journal-index.
+      operations:
+      - method: GET
+        name: listjournalindexes
+        description: List journal indexes
+        call: hoverfly-journal.listjournalindexes
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createjournalindex
+        description: Create journal index
+        call: hoverfly-journal.createjournalindex
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v2/journal/index/{indexname}
+      name: api-v2-journal-index-indexname
+      description: REST surface for api-v2-journal-index-indexName.
+      operations:
+      - method: DELETE
+        name: deletejournalindex
+        description: Delete journal index
+        call: hoverfly-journal.deletejournalindex
+        with:
+          indexName: rest.indexName
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hoverfly-journal-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Hoverfly Admin API — Journal. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-journal
+      description: Get journal
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hoverfly-journal.getjournal
+      with:
+        limit: tools.limit
+        offset: tools.offset
+        from: tools.from
+        to: tools.to
+        sort: tools.sort
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: filter-journal
+      description: Filter journal
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hoverfly-journal.filterjournal
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: clear-journal
+      description: Clear journal
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hoverfly-journal.clearjournal
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-journal-indexes
+      description: List journal indexes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hoverfly-journal.listjournalindexes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-journal-index
+      description: Create journal index
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hoverfly-journal.createjournalindex
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-journal-index
+      description: Delete journal index
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hoverfly-journal.deletejournalindex
+      with:
+        indexName: tools.indexName
+      outputParameters:
+      - type: object
+        mapping: $.

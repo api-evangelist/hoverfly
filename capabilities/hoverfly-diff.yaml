@@ -1,0 +1,127 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hoverfly Admin API — Diff
+  description: 'Hoverfly Admin API — Diff. 3 operations. Lead operation: Get diff reports. Self-contained Naftiko capability
+    covering one Hoverfly business surface.'
+  tags:
+  - Hoverfly
+  - Diff
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOVERFLY_API_KEY: HOVERFLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hoverfly-diff
+    baseUri: http://localhost:8888
+    description: Hoverfly Admin API — Diff business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v2-diff
+      path: /api/v2/diff
+      operations:
+      - name: getdiff
+        method: GET
+        description: Get diff reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: filterdiff
+        method: POST
+        description: Filter diff reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: cleardiff
+        method: DELETE
+        description: Clear diff reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: hoverfly-diff-rest
+    port: 8080
+    description: REST adapter for Hoverfly Admin API — Diff. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v2/diff
+      name: api-v2-diff
+      description: REST surface for api-v2-diff.
+      operations:
+      - method: GET
+        name: getdiff
+        description: Get diff reports
+        call: hoverfly-diff.getdiff
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: filterdiff
+        description: Filter diff reports
+        call: hoverfly-diff.filterdiff
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: cleardiff
+        description: Clear diff reports
+        call: hoverfly-diff.cleardiff
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hoverfly-diff-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Hoverfly Admin API — Diff. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-diff-reports
+      description: Get diff reports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hoverfly-diff.getdiff
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: filter-diff-reports
+      description: Filter diff reports
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hoverfly-diff.filterdiff
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: clear-diff-reports
+      description: Clear diff reports
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hoverfly-diff.cleardiff
+      outputParameters:
+      - type: object
+        mapping: $.

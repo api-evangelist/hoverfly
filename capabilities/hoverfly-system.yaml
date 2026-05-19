@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Hoverfly Admin API — System
+  description: 'Hoverfly Admin API — System. 1 operations. Lead operation: Shut down Hoverfly. Self-contained Naftiko capability
+    covering one Hoverfly business surface.'
+  tags:
+  - Hoverfly
+  - System
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOVERFLY_API_KEY: HOVERFLY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hoverfly-system
+    baseUri: http://localhost:8888
+    description: Hoverfly Admin API — System business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v2-shutdown
+      path: /api/v2/shutdown
+      operations:
+      - name: shutdown
+        method: DELETE
+        description: Shut down Hoverfly
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: hoverfly-system-rest
+    port: 8080
+    description: REST adapter for Hoverfly Admin API — System. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v2/shutdown
+      name: api-v2-shutdown
+      description: REST surface for api-v2-shutdown.
+      operations:
+      - method: DELETE
+        name: shutdown
+        description: Shut down Hoverfly
+        call: hoverfly-system.shutdown
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hoverfly-system-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Hoverfly Admin API — System. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: shut-down-hoverfly
+      description: Shut down Hoverfly
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hoverfly-system.shutdown
+      outputParameters:
+      - type: object
+        mapping: $.
