@@ -1,0 +1,660 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Simulation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/simulation"
+          },
+          "docs": "Get simulation"
+        },
+        {
+          "info": {
+            "name": "Append simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8888/api/v2/simulation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Append simulation"
+        },
+        {
+          "info": {
+            "name": "Replace simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/simulation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace simulation"
+        },
+        {
+          "info": {
+            "name": "Clear simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/simulation"
+          },
+          "docs": "Clear simulation"
+        },
+        {
+          "info": {
+            "name": "Get simulation JSON schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/simulation/schema"
+          },
+          "docs": "Get simulation JSON schema"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Hoverfly",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Hoverfly configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly"
+          },
+          "docs": "Get Hoverfly configuration"
+        },
+        {
+          "info": {
+            "name": "Get CORS settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/cors"
+          },
+          "docs": "Get CORS settings"
+        },
+        {
+          "info": {
+            "name": "Get destination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/destination"
+          },
+          "docs": "Get destination"
+        },
+        {
+          "info": {
+            "name": "Set destination",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/destination",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set destination"
+        },
+        {
+          "info": {
+            "name": "Get middleware",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/middleware"
+          },
+          "docs": "Get middleware"
+        },
+        {
+          "info": {
+            "name": "Update middleware",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/middleware",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update middleware"
+        },
+        {
+          "info": {
+            "name": "Get mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/mode"
+          },
+          "docs": "Get mode"
+        },
+        {
+          "info": {
+            "name": "Set mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/mode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set mode"
+        },
+        {
+          "info": {
+            "name": "Get version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/version"
+          },
+          "docs": "Get version"
+        },
+        {
+          "info": {
+            "name": "Get usage metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/usage"
+          },
+          "docs": "Get usage metrics"
+        },
+        {
+          "info": {
+            "name": "Get upstream proxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/upstream-proxy"
+          },
+          "docs": "Get upstream proxy"
+        },
+        {
+          "info": {
+            "name": "Get PAC file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/pac"
+          },
+          "docs": "Get PAC file"
+        },
+        {
+          "info": {
+            "name": "Set PAC file",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/pac"
+          },
+          "docs": "Set PAC file"
+        },
+        {
+          "info": {
+            "name": "Delete PAC file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/hoverfly/pac"
+          },
+          "docs": "Delete PAC file"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Post-Serve Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List post-serve actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/post-serve-action"
+          },
+          "docs": "List post-serve actions"
+        },
+        {
+          "info": {
+            "name": "Create or update post-serve action",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/post-serve-action",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update post-serve action"
+        },
+        {
+          "info": {
+            "name": "Delete post-serve action",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/hoverfly/post-serve-action/:actionName",
+            "params": [
+              {
+                "name": "actionName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete post-serve action"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cache",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/cache"
+          },
+          "docs": "Get cache"
+        },
+        {
+          "info": {
+            "name": "Clear cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/cache"
+          },
+          "docs": "Clear cache"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Logs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/logs",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get logs"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Journal",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get journal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/journal",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get journal"
+        },
+        {
+          "info": {
+            "name": "Filter journal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8888/api/v2/journal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Filter journal"
+        },
+        {
+          "info": {
+            "name": "Clear journal",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/journal"
+          },
+          "docs": "Clear journal"
+        },
+        {
+          "info": {
+            "name": "List journal indexes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/journal/index"
+          },
+          "docs": "List journal indexes"
+        },
+        {
+          "info": {
+            "name": "Create journal index",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8888/api/v2/journal/index",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create journal index"
+        },
+        {
+          "info": {
+            "name": "Delete journal index",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/journal/index/:indexName",
+            "params": [
+              {
+                "name": "indexName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete journal index"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "State",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/state"
+          },
+          "docs": "Get state"
+        },
+        {
+          "info": {
+            "name": "Replace state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/state",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace state"
+        },
+        {
+          "info": {
+            "name": "Patch state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://localhost:8888/api/v2/state",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Patch state"
+        },
+        {
+          "info": {
+            "name": "Clear state",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/state"
+          },
+          "docs": "Clear state"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Diff",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get diff reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/diff"
+          },
+          "docs": "Get diff reports"
+        },
+        {
+          "info": {
+            "name": "Filter diff reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8888/api/v2/diff",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Filter diff reports"
+        },
+        {
+          "info": {
+            "name": "Clear diff reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/diff"
+          },
+          "docs": "Clear diff reports"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Templating Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List CSV data sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/templating-data-source/csv"
+          },
+          "docs": "List CSV data sources"
+        },
+        {
+          "info": {
+            "name": "Upsert CSV data source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/templating-data-source/csv",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upsert CSV data source"
+        },
+        {
+          "info": {
+            "name": "Delete CSV data source",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/hoverfly/templating-data-source/csv/:dataSourceName",
+            "params": [
+              {
+                "name": "dataSourceName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete CSV data source"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "System",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Shut down Hoverfly",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/shutdown"
+          },
+          "docs": "Shut down Hoverfly"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

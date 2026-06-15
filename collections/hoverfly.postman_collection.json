@@ -1,0 +1,3371 @@
+{
+  "item": [
+    {
+      "id": "897b8ee7-fcb0-4f18-9500-23d2186c21ef",
+      "name": "Simulation",
+      "description": {
+        "content": "Manage simulation request-response pairs and metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "90fbb20f-b6eb-4ad8-92d3-0d9e48255227",
+          "name": "Get simulation",
+          "request": {
+            "name": "Get simulation",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "simulation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be3dd301-148e-41f0-9134-632be6d7bd20",
+              "name": "Simulation data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "simulation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"globalActions\": {}\n  },\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e32231a-5257-4a88-899b-bd3462f801b2",
+          "name": "Replace simulation",
+          "request": {
+            "name": "Replace simulation",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "simulation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"pairs\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"globalActions\": \"<object>\"\n  },\n  \"meta\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8167dd5e-fa9c-4c40-9113-88627adea239",
+              "name": "Simulation replaced.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "simulation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"pairs\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"globalActions\": \"<object>\"\n  },\n  \"meta\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"globalActions\": {}\n  },\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0394df73-09e9-4570-868b-d2df326b6c0c",
+          "name": "Append simulation",
+          "request": {
+            "name": "Append simulation",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "simulation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"pairs\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"globalActions\": \"<object>\"\n  },\n  \"meta\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "202b5694-2dae-4ba8-b07d-e9eae1ec12f7",
+              "name": "Simulation appended.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "simulation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"pairs\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"globalActions\": \"<object>\"\n  },\n  \"meta\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"globalActions\": {}\n  },\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "161ab275-da22-4064-b859-1cb22a500672",
+          "name": "Clear simulation",
+          "request": {
+            "name": "Clear simulation",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "simulation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cf454a7-fe7e-4a49-a70d-b0274e01bd74",
+              "name": "Simulation cleared.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "simulation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e394ac4f-1a68-4ec6-92d9-1345c6c96412",
+          "name": "Get simulation JSON schema",
+          "request": {
+            "name": "Get simulation JSON schema",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "simulation",
+                "schema"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f44b7e7-a3c3-447d-b958-725a90e5d644",
+              "name": "JSON Schema document.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "simulation",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "18ee4167-a3fa-458e-a652-1015d3bcee37",
+      "name": "Hoverfly",
+      "description": {
+        "content": "Manage Hoverfly runtime configuration.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3d2bb4e1-245d-4d82-bca2-88ad4692047c",
+          "name": "Get Hoverfly configuration",
+          "request": {
+            "name": "Get Hoverfly configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79f403ba-2d59-4e07-a1e5-c2a510103bc5",
+              "name": "Configuration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "978a107a-a24b-4ce6-b68a-be7985b56b98",
+          "name": "Get CORS settings",
+          "request": {
+            "name": "Get CORS settings",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "cors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a506b896-36f5-4c6a-9fd3-b326c9a41452",
+              "name": "CORS settings.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "cors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5d61f62-f9bb-439e-99f5-c042de4b308a",
+          "name": "Get destination",
+          "request": {
+            "name": "Get destination",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "destination"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a701d3b-9227-4be1-ac14-f15fcfb35bcd",
+              "name": "Destination.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "destination"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"destination\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1552d762-9372-4056-b711-4d6965152c17",
+          "name": "Set destination",
+          "request": {
+            "name": "Set destination",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "destination"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destination\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "52120733-2dd5-4554-82f4-72f669b7d4d6",
+              "name": "Destination updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "destination"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destination\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40f4438e-14c6-4acf-8c75-9ea7f5ac9253",
+          "name": "Get middleware",
+          "request": {
+            "name": "Get middleware",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "middleware"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "670f49b6-f589-4a45-b784-3e9901c6b353",
+              "name": "Middleware configuration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "middleware"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"binary\": \"string\",\n  \"script\": \"string\",\n  \"remote\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d5797ed-5018-44c6-91ab-a689a1b2c2d1",
+          "name": "Update middleware",
+          "request": {
+            "name": "Update middleware",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "middleware"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"binary\": \"<string>\",\n  \"script\": \"<string>\",\n  \"remote\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7c9e6d7-228b-4741-bd36-1745571329df",
+              "name": "Middleware updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "middleware"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"binary\": \"<string>\",\n  \"script\": \"<string>\",\n  \"remote\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "330c78f4-4747-4ed3-9174-b6e5588515fe",
+          "name": "Get mode",
+          "request": {
+            "name": "Get mode",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "mode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "353c2448-7aad-41e0-85c0-7a27af347692",
+              "name": "Mode.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "mode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"mode\": \"spy\",\n  \"arguments\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6f15fa7-4004-4237-85bd-4aa2d9a74c9f",
+          "name": "Set mode",
+          "request": {
+            "name": "Set mode",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "mode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mode\": \"<string>\",\n  \"arguments\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ffd38bac-7ebe-46a3-beb9-f2cd0a4d56c0",
+              "name": "Mode updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "mode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mode\": \"<string>\",\n  \"arguments\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ae9cdc3-9451-4114-9e34-364f19243fc5",
+          "name": "Get version",
+          "request": {
+            "name": "Get version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2e245c67-3319-44c5-86fe-e5cafbb20226",
+              "name": "Version.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bbedffb-3b48-44a1-8b00-9a5fd9ef74a7",
+          "name": "Get usage metrics",
+          "request": {
+            "name": "Get usage metrics",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "543bd5ee-36d0-412e-b490-3cdf4bc9d4f5",
+              "name": "Usage metrics.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d898664e-4911-4c67-8e87-38f5e1da2982",
+          "name": "Get upstream proxy",
+          "request": {
+            "name": "Get upstream proxy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "upstream-proxy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9330588-4958-472d-925b-7086bdfd077c",
+              "name": "Upstream proxy.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "upstream-proxy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2dd5228-3f9b-4660-990f-0e80c43b9fb8",
+          "name": "Get PAC file",
+          "request": {
+            "name": "Get PAC file",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "pac"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57f7a3b5-400a-42cc-9ad3-4c3e935973d6",
+              "name": "PAC file.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "pac"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c71b09a5-6a5b-4465-a496-39d5f82be81d",
+              "name": "PAC not configured.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "pac"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61d87c1b-eaaa-4bdd-b23f-972ddcc399d2",
+          "name": "Set PAC file",
+          "request": {
+            "name": "Set PAC file",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "pac"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "5de5bc96-61a9-4b1c-86cd-7998891d4cbd",
+              "name": "PAC set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "pac"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35f0390f-014d-486e-9f9e-41cf7e05863f",
+          "name": "Delete PAC file",
+          "request": {
+            "name": "Delete PAC file",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "pac"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce6a97d6-8841-4904-944f-7d50b3b1257a",
+              "name": "PAC removed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "pac"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "11802147-9bf2-476d-9b44-de83bba29cb2",
+      "name": "Post-Serve Actions",
+      "description": {
+        "content": "Manage post-serve actions executed after responses are served.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5be3ae24-0616-4704-bc7c-d98b5668cfc8",
+          "name": "List post-serve actions",
+          "request": {
+            "name": "List post-serve actions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "post-serve-action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1210dedc-6bb0-49f9-aff0-bc6ef5347973",
+              "name": "Actions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "post-serve-action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"actionName\": \"string\",\n    \"binary\": \"string\",\n    \"script\": \"string\",\n    \"delayInMs\": 7500\n  },\n  {\n    \"actionName\": \"string\",\n    \"binary\": \"string\",\n    \"script\": \"string\",\n    \"delayInMs\": 9206\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94e9d912-55c8-475b-807a-deacef1c52ee",
+          "name": "Create or update post-serve action",
+          "request": {
+            "name": "Create or update post-serve action",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "post-serve-action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actionName\": \"<string>\",\n  \"binary\": \"<string>\",\n  \"script\": \"<string>\",\n  \"delayInMs\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7bd3f536-e94b-4540-8d58-3ab22036b5b2",
+              "name": "Action saved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "post-serve-action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actionName\": \"<string>\",\n  \"binary\": \"<string>\",\n  \"script\": \"<string>\",\n  \"delayInMs\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0068af3-98bd-4353-81da-74ed772c668b",
+          "name": "Delete post-serve action",
+          "request": {
+            "name": "Delete post-serve action",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "post-serve-action",
+                ":actionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "actionName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6572d737-30e0-40bd-9ceb-f24d18057ac6",
+              "name": "Action deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "post-serve-action",
+                    ":actionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "actionName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6b2882a5-f079-410c-847b-8a60789438cf",
+      "name": "Cache",
+      "description": {
+        "content": "Inspect and clear the cache of matched request-response pairs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2daaf361-8c34-4264-922d-3595070b6c7e",
+          "name": "Get cache",
+          "request": {
+            "name": "Get cache",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "cache"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2516f80-a57b-4710-b39c-3ca36721d542",
+              "name": "Cache contents.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "cache"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "730e9398-5ded-4368-a66f-2c1ac38b3852",
+          "name": "Clear cache",
+          "request": {
+            "name": "Clear cache",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "cache"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b122dd25-d55f-4da1-9332-111fb76b5d85",
+              "name": "Cache cleared.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "cache"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bed75d29-44f1-47ba-94f8-06163dc69226",
+      "name": "Logs",
+      "description": {
+        "content": "Retrieve runtime logs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4dda6ace-9d0a-4fd3-ba40-c7b92be3bd20",
+          "name": "Get logs",
+          "request": {
+            "name": "Get logs",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "365d2d3b-1aef-4b1d-9e39-928bf8aabffd",
+              "name": "Logs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "67b999bf-9420-4132-aa62-d8a8a9ef7695",
+      "name": "Journal",
+      "description": {
+        "content": "Inspect and filter the journal of intercepted requests.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a034f275-0733-46ac-9568-09d946ac4df6",
+          "name": "Get journal",
+          "request": {
+            "name": "Get journal",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "journal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "500"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd3f2c49-09c8-4462-b21f-50b16166be33",
+              "name": "Journal entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "journal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "500"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21c9e0ab-2549-4a18-8ed4-cb640b521863",
+          "name": "Filter journal",
+          "request": {
+            "name": "Filter journal",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "journal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64304a9e-d7db-4a4e-a94b-72911358c2c1",
+              "name": "Filtered entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "journal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8848f312-2504-425a-b009-dd2ca2a01d4f",
+          "name": "Clear journal",
+          "request": {
+            "name": "Clear journal",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "journal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac10ee9f-77ce-4a1c-b2c5-dc526386e33b",
+              "name": "Journal cleared.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "journal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a013204-3223-48ae-a071-a53039847460",
+          "name": "List journal indexes",
+          "request": {
+            "name": "List journal indexes",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "journal",
+                "index"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "539a90ca-a19d-4743-953e-78de8a8b9943",
+              "name": "Indexes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "journal",
+                    "index"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2da3721-c078-4318-8a28-93374b2a0ad3",
+          "name": "Create journal index",
+          "request": {
+            "name": "Create journal index",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "journal",
+                "index"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "359ced39-34f9-4e5e-a803-fe73bc8e24e9",
+              "name": "Index created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "journal",
+                    "index"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "603dd598-583b-4a40-85d5-6c4ea1e38f98",
+          "name": "Delete journal index",
+          "request": {
+            "name": "Delete journal index",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "journal",
+                "index",
+                ":indexName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "indexName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bc3bd62c-413f-4430-b872-4e6b505c36c3",
+              "name": "Index deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "journal",
+                    "index",
+                    ":indexName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "indexName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1e1fa1cf-952b-4799-8f45-ff9a294d40e0",
+      "name": "State",
+      "description": {
+        "content": "Manage stateful keys used during simulation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "780f2cb5-98bb-4c2f-a5c3-27205900f2db",
+          "name": "Get state",
+          "request": {
+            "name": "Get state",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66599c76-2ddd-47ac-9014-1db3c1c4aa1a",
+              "name": "State map.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bcf347c6-66ae-40aa-996f-051b8e9a5065",
+          "name": "Replace state",
+          "request": {
+            "name": "Replace state",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d97473a-9f75-47ef-8177-2f540225649e",
+              "name": "State replaced.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53c2b3e0-7373-46ea-b775-a6540534c17b",
+          "name": "Patch state",
+          "request": {
+            "name": "Patch state",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec66e919-b9d6-49c9-a1bd-0d74b9eec9e7",
+              "name": "State patched.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4491faa3-18b5-4e3d-9ffd-e45f9d9b25f5",
+          "name": "Clear state",
+          "request": {
+            "name": "Clear state",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e3c1087-e31e-407d-9c89-4cfc8744f675",
+              "name": "State cleared.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2e4d2763-cf3f-49fd-80e8-67193d30bd11",
+      "name": "Diff",
+      "description": {
+        "content": "Inspect and clear response difference reports.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c05105bd-f2c9-4f76-b521-0b7496531ea2",
+          "name": "Get diff reports",
+          "request": {
+            "name": "Get diff reports",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5cc39ae-7bad-4bac-87d1-9f7be50e5271",
+              "name": "Diff reports.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57c52a80-e21a-40f7-895c-95c286ab5a7d",
+          "name": "Filter diff reports",
+          "request": {
+            "name": "Filter diff reports",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b61f548f-d230-4631-a1b4-738294adc7eb",
+              "name": "Filtered diff reports.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d6ccb74-5ea1-473b-8a7e-7cd0c63c10c6",
+          "name": "Clear diff reports",
+          "request": {
+            "name": "Clear diff reports",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "diff"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa8927f3-5443-4090-a270-aa1997a27586",
+              "name": "Diff cleared.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "diff"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "80c8d3f5-7a72-49c6-897f-e8eca1c0883b",
+      "name": "Templating Data",
+      "description": {
+        "content": "Manage CSV-based templating data sources.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f7503e7-7497-4f81-b055-b3ee29cef1e9",
+          "name": "List CSV data sources",
+          "request": {
+            "name": "List CSV data sources",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "templating-data-source",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eee4c20d-5e05-4514-957b-706bcadc9df6",
+              "name": "CSV data sources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "templating-data-source",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6967a89-a831-4a9d-9de8-b4625eaa31fc",
+          "name": "Upsert CSV data source",
+          "request": {
+            "name": "Upsert CSV data source",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "templating-data-source",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"data\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f4b21f9f-980b-43fb-8dfa-6a098a46e223",
+              "name": "Data source saved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "templating-data-source",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"data\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0cf99ead-7923-489b-b70a-b68abde0ef6d",
+          "name": "Delete CSV data source",
+          "request": {
+            "name": "Delete CSV data source",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "templating-data-source",
+                "csv",
+                ":dataSourceName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataSourceName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5756ccc6-3b41-45f1-a9b7-d77bbcd91fc5",
+              "name": "Data source deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "templating-data-source",
+                    "csv",
+                    ":dataSourceName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataSourceName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "103327b5-b449-4a78-8d2c-21f9d0cdaa42",
+      "name": "System",
+      "description": {
+        "content": "System-level controls.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5391ac4f-fbd9-4fb5-aa12-2b217440661c",
+          "name": "Shut down Hoverfly",
+          "request": {
+            "name": "Shut down Hoverfly",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shutdown"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d86f75d5-c9a3-400b-9d8c-0c54a7e9efa6",
+              "name": "Hoverfly shutting down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shutdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8888",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cf794d80-1728-435e-88b0-cece3e092de0",
+    "name": "Hoverfly Admin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.\n\nContact Support:\n Name: Hoverfly Project",
+      "type": "text/plain"
+    }
+  }
+}
