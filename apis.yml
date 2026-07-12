@@ -35,6 +35,8 @@ apis:
       - type: OpenAPI
         url: openapi/hoverfly-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/hoverfly-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/hoverfly
   - type: Website
