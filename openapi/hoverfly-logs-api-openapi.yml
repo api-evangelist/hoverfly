@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache Logs API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Logs
+  description: Retrieve runtime logs.
+paths:
+  /api/v2/logs:
+    get:
+      tags:
+      - Logs
+      summary: Get logs
+      operationId: getLogs
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 500
+      - name: from
+        in: query
+        schema:
+          type: integer
+          description: Unix timestamp.
+      responses:
+        '200':
+          description: Logs.
+          content:
+            application/json:
+              schema:
+                type: object
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

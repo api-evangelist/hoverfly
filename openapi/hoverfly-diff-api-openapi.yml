@@ -1,0 +1,60 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache Diff API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Diff
+  description: Inspect and clear response difference reports.
+paths:
+  /api/v2/diff:
+    get:
+      tags:
+      - Diff
+      summary: Get diff reports
+      operationId: getDiff
+      responses:
+        '200':
+          description: Diff reports.
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Diff
+      summary: Filter diff reports
+      operationId: filterDiff
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Filtered diff reports.
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Diff
+      summary: Clear diff reports
+      operationId: clearDiff
+      responses:
+        '200':
+          description: Diff cleared.
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

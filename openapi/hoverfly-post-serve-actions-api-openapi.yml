@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache Post-Serve Actions API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Post-Serve Actions
+  description: Manage post-serve actions executed after responses are served.
+paths:
+  /api/v2/hoverfly/post-serve-action:
+    get:
+      tags:
+      - Post-Serve Actions
+      summary: List post-serve actions
+      operationId: listPostServeActions
+      responses:
+        '200':
+          description: Actions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostServeAction'
+    put:
+      tags:
+      - Post-Serve Actions
+      summary: Create or update post-serve action
+      operationId: upsertPostServeAction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostServeAction'
+      responses:
+        '200':
+          description: Action saved.
+  /api/v2/hoverfly/post-serve-action/{actionName}:
+    delete:
+      tags:
+      - Post-Serve Actions
+      summary: Delete post-serve action
+      operationId: deletePostServeAction
+      parameters:
+      - name: actionName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Action deleted.
+components:
+  schemas:
+    PostServeAction:
+      type: object
+      properties:
+        actionName:
+          type: string
+        binary:
+          type: string
+        script:
+          type: string
+        delayInMs:
+          type: integer
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

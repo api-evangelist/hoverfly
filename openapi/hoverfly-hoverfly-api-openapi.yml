@@ -1,0 +1,237 @@
+openapi: 3.1.0
+info:
+  title: Admin Cache Hoverfly API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Hoverfly
+  description: Manage Hoverfly runtime configuration.
+paths:
+  /api/v2/hoverfly:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get Hoverfly configuration
+      operationId: getHoverfly
+      responses:
+        '200':
+          description: Configuration.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v2/hoverfly/cors:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get CORS settings
+      operationId: getCors
+      responses:
+        '200':
+          description: CORS settings.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v2/hoverfly/destination:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get destination
+      operationId: getDestination
+      responses:
+        '200':
+          description: Destination.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  destination:
+                    type: string
+    put:
+      tags:
+      - Hoverfly
+      summary: Set destination
+      operationId: setDestination
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - destination
+              properties:
+                destination:
+                  type: string
+      responses:
+        '200':
+          description: Destination updated.
+  /api/v2/hoverfly/middleware:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get middleware
+      operationId: getMiddleware
+      responses:
+        '200':
+          description: Middleware configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Middleware'
+    put:
+      tags:
+      - Hoverfly
+      summary: Update middleware
+      operationId: setMiddleware
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Middleware'
+      responses:
+        '200':
+          description: Middleware updated.
+  /api/v2/hoverfly/mode:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get mode
+      operationId: getMode
+      responses:
+        '200':
+          description: Mode.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mode'
+    put:
+      tags:
+      - Hoverfly
+      summary: Set mode
+      operationId: setMode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mode'
+      responses:
+        '200':
+          description: Mode updated.
+  /api/v2/hoverfly/version:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get version
+      operationId: getVersion
+      responses:
+        '200':
+          description: Version.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v2/hoverfly/usage:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get usage metrics
+      operationId: getUsage
+      responses:
+        '200':
+          description: Usage metrics.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v2/hoverfly/upstream-proxy:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get upstream proxy
+      operationId: getUpstreamProxy
+      responses:
+        '200':
+          description: Upstream proxy.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v2/hoverfly/pac:
+    get:
+      tags:
+      - Hoverfly
+      summary: Get PAC file
+      operationId: getPac
+      responses:
+        '200':
+          description: PAC file.
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: PAC not configured.
+    put:
+      tags:
+      - Hoverfly
+      summary: Set PAC file
+      operationId: setPac
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: PAC set.
+    delete:
+      tags:
+      - Hoverfly
+      summary: Delete PAC file
+      operationId: deletePac
+      responses:
+        '200':
+          description: PAC removed.
+components:
+  schemas:
+    Mode:
+      type: object
+      properties:
+        mode:
+          type: string
+          enum:
+          - simulate
+          - capture
+          - modify
+          - synthesize
+          - spy
+          - diff
+        arguments:
+          type: object
+    Middleware:
+      type: object
+      properties:
+        binary:
+          type: string
+        script:
+          type: string
+        remote:
+          type: string
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

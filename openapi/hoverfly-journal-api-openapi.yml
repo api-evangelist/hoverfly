@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache Journal API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Journal
+  description: Inspect and filter the journal of intercepted requests.
+paths:
+  /api/v2/journal:
+    get:
+      tags:
+      - Journal
+      summary: Get journal
+      operationId: getJournal
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 500
+      - name: offset
+        in: query
+        schema:
+          type: integer
+      - name: from
+        in: query
+        schema:
+          type: integer
+      - name: to
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+          description: Format "field:order" where field is timestarted or latency and order is asc or desc.
+      responses:
+        '200':
+          description: Journal entries.
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Journal
+      summary: Filter journal
+      operationId: filterJournal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Filtered entries.
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Journal
+      summary: Clear journal
+      operationId: clearJournal
+      responses:
+        '200':
+          description: Journal cleared.
+  /api/v2/journal/index:
+    get:
+      tags:
+      - Journal
+      summary: List journal indexes
+      operationId: listJournalIndexes
+      responses:
+        '200':
+          description: Indexes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    post:
+      tags:
+      - Journal
+      summary: Create journal index
+      operationId: createJournalIndex
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Index created.
+  /api/v2/journal/index/{indexName}:
+    delete:
+      tags:
+      - Journal
+      summary: Delete journal index
+      operationId: deleteJournalIndex
+      parameters:
+      - name: indexName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Index deleted.
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

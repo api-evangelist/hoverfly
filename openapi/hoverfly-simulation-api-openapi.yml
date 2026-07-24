@@ -1,0 +1,107 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache Simulation API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Simulation
+  description: Manage simulation request-response pairs and metadata.
+paths:
+  /api/v2/simulation:
+    get:
+      tags:
+      - Simulation
+      summary: Get simulation
+      operationId: getSimulation
+      responses:
+        '200':
+          description: Simulation data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Simulation'
+    put:
+      tags:
+      - Simulation
+      summary: Replace simulation
+      operationId: replaceSimulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Simulation'
+      responses:
+        '200':
+          description: Simulation replaced.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Simulation'
+    post:
+      tags:
+      - Simulation
+      summary: Append simulation
+      operationId: appendSimulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Simulation'
+      responses:
+        '200':
+          description: Simulation appended.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Simulation'
+    delete:
+      tags:
+      - Simulation
+      summary: Clear simulation
+      operationId: clearSimulation
+      responses:
+        '200':
+          description: Simulation cleared.
+  /api/v2/simulation/schema:
+    get:
+      tags:
+      - Simulation
+      summary: Get simulation JSON schema
+      operationId: getSimulationSchema
+      responses:
+        '200':
+          description: JSON Schema document.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    Simulation:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            pairs:
+              type: array
+              items:
+                type: object
+            globalActions:
+              type: object
+        meta:
+          type: object
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

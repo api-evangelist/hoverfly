@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache Templating Data API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: Templating Data
+  description: Manage CSV-based templating data sources.
+paths:
+  /api/v2/hoverfly/templating-data-source/csv:
+    get:
+      tags:
+      - Templating Data
+      summary: List CSV data sources
+      operationId: listCsvDataSources
+      responses:
+        '200':
+          description: CSV data sources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    put:
+      tags:
+      - Templating Data
+      summary: Upsert CSV data source
+      operationId: upsertCsvDataSource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                data:
+                  type: string
+      responses:
+        '200':
+          description: Data source saved.
+  /api/v2/hoverfly/templating-data-source/csv/{dataSourceName}:
+    delete:
+      tags:
+      - Templating Data
+      summary: Delete CSV data source
+      operationId: deleteCsvDataSource
+      parameters:
+      - name: dataSourceName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Data source deleted.
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html

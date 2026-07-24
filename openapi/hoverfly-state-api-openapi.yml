@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin Cache State API
+  description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8888
+  description: Default Hoverfly Admin API endpoint
+tags:
+- name: State
+  description: Manage stateful keys used during simulation.
+paths:
+  /api/v2/state:
+    get:
+      tags:
+      - State
+      summary: Get state
+      operationId: getState
+      responses:
+        '200':
+          description: State map.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+    put:
+      tags:
+      - State
+      summary: Replace state
+      operationId: replaceState
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+      responses:
+        '200':
+          description: State replaced.
+    patch:
+      tags:
+      - State
+      summary: Patch state
+      operationId: patchState
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+      responses:
+        '200':
+          description: State patched.
+    delete:
+      tags:
+      - State
+      summary: Clear state
+      operationId: clearState
+      responses:
+        '200':
+          description: State cleared.
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
