@@ -4,7 +4,19 @@ description: >-
   Hoverfly is an open source API simulation tool for creating realistic mock services and capturing-replaying HTTP
   traffic for testing.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hoverfly.png
 tags:
   - Mocking
   - Testing
@@ -13,27 +25,166 @@ created: '2026-03-25'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: hoverfly:hoverfly-admin-api
-    name: Hoverfly Admin API
-    description: >-
-      The Hoverfly Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode
-      and middleware configuration, journal and diff inspection, state management, caching, logging, templating data
-      sources, and post-serve actions.
-    humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
-    baseURL: http://localhost:8888
-    tags:
-      - Mocking
-      - Simulation
-      - Testing
-    properties:
-      - type: Documentation
-        url: https://docs.hoverfly.io
-      - type: APIReference
-        url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
-      - type: SourceCode
-        url: https://github.com/SpectoLabs/hoverfly
-      - type: OpenAPI
-        url: openapi/hoverfly-openapi.yml
+- aid: hoverfly:hoverfly-cache-api
+  name: Hoverfly Cache API
+  description: Inspect and clear the cache of matched request-response pairs.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Cache
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-cache-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-diff-api
+  name: Hoverfly Diff API
+  description: Inspect and clear response difference reports.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Diff
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-diff-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-hoverfly-api
+  name: Hoverfly Hoverfly API
+  description: Manage Hoverfly runtime configuration.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Hoverfly
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-hoverfly-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-journal-api
+  name: Hoverfly Journal API
+  description: Inspect and filter the journal of intercepted requests.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Journal
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-journal-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-logs-api
+  name: Hoverfly Logs API
+  description: Retrieve runtime logs.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-post-serve-actions-api
+  name: Hoverfly Post-Serve Actions API
+  description: Manage post-serve actions executed after responses are served.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Post-Serve Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-post-serve-actions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-simulation-api
+  name: Hoverfly Simulation API
+  description: Manage simulation request-response pairs and metadata.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Simulation
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-simulation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-state-api
+  name: Hoverfly State API
+  description: Manage stateful keys used during simulation.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - State
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-state-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-system-api
+  name: Hoverfly System API
+  description: System-level controls.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - System
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-system-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
+- aid: hoverfly:hoverfly-templating-data-api
+  name: Hoverfly Templating Data API
+  description: Manage CSV-based templating data sources.
+  humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  baseURL: http://localhost:8888
+  tags:
+  - Templating Data
+  properties:
+  - type: OpenAPI
+    url: openapi/hoverfly-templating-data-api-openapi.yml
+  - type: Documentation
+    url: https://docs.hoverfly.io
+  - type: APIReference
+    url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+  - type: SourceCode
+    url: https://github.com/SpectoLabs/hoverfly
 common:
   - type: AgenticAccess
     url: agentic-access/hoverfly-agentic-access.yml
