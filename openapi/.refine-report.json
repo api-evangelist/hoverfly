@@ -1,0 +1,32 @@
+{
+  "provider": "hoverfly",
+  "sources": [
+    "hoverfly-cache-api-openapi.yml",
+    "hoverfly-diff-api-openapi.yml",
+    "hoverfly-hoverfly-api-openapi.yml",
+    "hoverfly-journal-api-openapi.yml",
+    "hoverfly-logs-api-openapi.yml",
+    "hoverfly-post-serve-actions-api-openapi.yml",
+    "hoverfly-simulation-api-openapi.yml",
+    "hoverfly-state-api-openapi.yml",
+    "hoverfly-system-api-openapi.yml",
+    "hoverfly-templating-data-api-openapi.yml"
+  ],
+  "outputs": [
+    "hoverfly-cache-api-openapi.yml",
+    "hoverfly-diff-api-openapi.yml",
+    "hoverfly-hoverfly-api-openapi.yml",
+    "hoverfly-journal-api-openapi.yml",
+    "hoverfly-logs-api-openapi.yml",
+    "hoverfly-post-serve-actions-api-openapi.yml",
+    "hoverfly-simulation-api-openapi.yml",
+    "hoverfly-state-api-openapi.yml",
+    "hoverfly-system-api-openapi.yml",
+    "hoverfly-templating-data-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

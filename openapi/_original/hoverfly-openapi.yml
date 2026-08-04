@@ -1,0 +1,579 @@
+openapi: 3.1.0
+info:
+  title: Hoverfly Admin API
+  description: >-
+    Hoverfly's Admin API provides programmatic control of a Hoverfly instance,
+    including simulation management, mode and middleware configuration,
+    journal and diff inspection, state management, caching, logging,
+    templating data sources, and post-serve actions.
+  version: '2.0'
+  contact:
+    name: Hoverfly Project
+    url: https://docs.hoverfly.io
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+externalDocs:
+  description: Hoverfly Admin API Reference
+  url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
+servers:
+  - url: http://localhost:8888
+    description: Default Hoverfly Admin API endpoint
+tags:
+  - name: Simulation
+    description: Manage simulation request-response pairs and metadata.
+  - name: Hoverfly
+    description: Manage Hoverfly runtime configuration.
+  - name: Post-Serve Actions
+    description: Manage post-serve actions executed after responses are served.
+  - name: Cache
+    description: Inspect and clear the cache of matched request-response pairs.
+  - name: Logs
+    description: Retrieve runtime logs.
+  - name: Journal
+    description: Inspect and filter the journal of intercepted requests.
+  - name: State
+    description: Manage stateful keys used during simulation.
+  - name: Diff
+    description: Inspect and clear response difference reports.
+  - name: Templating Data
+    description: Manage CSV-based templating data sources.
+  - name: System
+    description: System-level controls.
+paths:
+  /api/v2/simulation:
+    get:
+      tags: [Simulation]
+      summary: Get simulation
+      operationId: getSimulation
+      responses:
+        '200':
+          description: Simulation data.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Simulation' }
+    put:
+      tags: [Simulation]
+      summary: Replace simulation
+      operationId: replaceSimulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Simulation' }
+      responses:
+        '200':
+          description: Simulation replaced.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Simulation' }
+    post:
+      tags: [Simulation]
+      summary: Append simulation
+      operationId: appendSimulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Simulation' }
+      responses:
+        '200':
+          description: Simulation appended.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Simulation' }
+    delete:
+      tags: [Simulation]
+      summary: Clear simulation
+      operationId: clearSimulation
+      responses:
+        '200':
+          description: Simulation cleared.
+  /api/v2/simulation/schema:
+    get:
+      tags: [Simulation]
+      summary: Get simulation JSON schema
+      operationId: getSimulationSchema
+      responses:
+        '200':
+          description: JSON Schema document.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/hoverfly:
+    get:
+      tags: [Hoverfly]
+      summary: Get Hoverfly configuration
+      operationId: getHoverfly
+      responses:
+        '200':
+          description: Configuration.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/hoverfly/cors:
+    get:
+      tags: [Hoverfly]
+      summary: Get CORS settings
+      operationId: getCors
+      responses:
+        '200':
+          description: CORS settings.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/hoverfly/destination:
+    get:
+      tags: [Hoverfly]
+      summary: Get destination
+      operationId: getDestination
+      responses:
+        '200':
+          description: Destination.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  destination: { type: string }
+    put:
+      tags: [Hoverfly]
+      summary: Set destination
+      operationId: setDestination
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [destination]
+              properties:
+                destination: { type: string }
+      responses:
+        '200':
+          description: Destination updated.
+  /api/v2/hoverfly/middleware:
+    get:
+      tags: [Hoverfly]
+      summary: Get middleware
+      operationId: getMiddleware
+      responses:
+        '200':
+          description: Middleware configuration.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Middleware' }
+    put:
+      tags: [Hoverfly]
+      summary: Update middleware
+      operationId: setMiddleware
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Middleware' }
+      responses:
+        '200':
+          description: Middleware updated.
+  /api/v2/hoverfly/mode:
+    get:
+      tags: [Hoverfly]
+      summary: Get mode
+      operationId: getMode
+      responses:
+        '200':
+          description: Mode.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Mode' }
+    put:
+      tags: [Hoverfly]
+      summary: Set mode
+      operationId: setMode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Mode' }
+      responses:
+        '200':
+          description: Mode updated.
+  /api/v2/hoverfly/version:
+    get:
+      tags: [Hoverfly]
+      summary: Get version
+      operationId: getVersion
+      responses:
+        '200':
+          description: Version.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/hoverfly/usage:
+    get:
+      tags: [Hoverfly]
+      summary: Get usage metrics
+      operationId: getUsage
+      responses:
+        '200':
+          description: Usage metrics.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/hoverfly/upstream-proxy:
+    get:
+      tags: [Hoverfly]
+      summary: Get upstream proxy
+      operationId: getUpstreamProxy
+      responses:
+        '200':
+          description: Upstream proxy.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/hoverfly/pac:
+    get:
+      tags: [Hoverfly]
+      summary: Get PAC file
+      operationId: getPac
+      responses:
+        '200':
+          description: PAC file.
+          content:
+            text/plain:
+              schema: { type: string }
+        '404': { description: PAC not configured. }
+    put:
+      tags: [Hoverfly]
+      summary: Set PAC file
+      operationId: setPac
+      requestBody:
+        required: true
+        content:
+          text/plain:
+            schema: { type: string }
+      responses:
+        '200': { description: PAC set. }
+    delete:
+      tags: [Hoverfly]
+      summary: Delete PAC file
+      operationId: deletePac
+      responses:
+        '200': { description: PAC removed. }
+  /api/v2/hoverfly/post-serve-action:
+    get:
+      tags: [Post-Serve Actions]
+      summary: List post-serve actions
+      operationId: listPostServeActions
+      responses:
+        '200':
+          description: Actions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/PostServeAction' }
+    put:
+      tags: [Post-Serve Actions]
+      summary: Create or update post-serve action
+      operationId: upsertPostServeAction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PostServeAction' }
+      responses:
+        '200': { description: Action saved. }
+  /api/v2/hoverfly/post-serve-action/{actionName}:
+    delete:
+      tags: [Post-Serve Actions]
+      summary: Delete post-serve action
+      operationId: deletePostServeAction
+      parameters:
+        - name: actionName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Action deleted. }
+  /api/v2/cache:
+    get:
+      tags: [Cache]
+      summary: Get cache
+      operationId: getCache
+      responses:
+        '200':
+          description: Cache contents.
+          content:
+            application/json:
+              schema: { type: object }
+    delete:
+      tags: [Cache]
+      summary: Clear cache
+      operationId: clearCache
+      responses:
+        '200': { description: Cache cleared. }
+  /api/v2/logs:
+    get:
+      tags: [Logs]
+      summary: Get logs
+      operationId: getLogs
+      parameters:
+        - name: limit
+          in: query
+          schema: { type: integer, default: 500 }
+        - name: from
+          in: query
+          schema: { type: integer, description: Unix timestamp. }
+      responses:
+        '200':
+          description: Logs.
+          content:
+            application/json:
+              schema: { type: object }
+  /api/v2/journal:
+    get:
+      tags: [Journal]
+      summary: Get journal
+      operationId: getJournal
+      parameters:
+        - name: limit
+          in: query
+          schema: { type: integer, default: 500 }
+        - name: offset
+          in: query
+          schema: { type: integer }
+        - name: from
+          in: query
+          schema: { type: integer }
+        - name: to
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            description: Format "field:order" where field is timestarted or latency and order is asc or desc.
+      responses:
+        '200':
+          description: Journal entries.
+          content:
+            application/json:
+              schema: { type: object }
+    post:
+      tags: [Journal]
+      summary: Filter journal
+      operationId: filterJournal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Filtered entries.
+          content:
+            application/json:
+              schema: { type: object }
+    delete:
+      tags: [Journal]
+      summary: Clear journal
+      operationId: clearJournal
+      responses:
+        '200': { description: Journal cleared. }
+  /api/v2/journal/index:
+    get:
+      tags: [Journal]
+      summary: List journal indexes
+      operationId: listJournalIndexes
+      responses:
+        '200':
+          description: Indexes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: object }
+    post:
+      tags: [Journal]
+      summary: Create journal index
+      operationId: createJournalIndex
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+      responses:
+        '201': { description: Index created. }
+  /api/v2/journal/index/{indexName}:
+    delete:
+      tags: [Journal]
+      summary: Delete journal index
+      operationId: deleteJournalIndex
+      parameters:
+        - name: indexName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Index deleted. }
+  /api/v2/state:
+    get:
+      tags: [State]
+      summary: Get state
+      operationId: getState
+      responses:
+        '200':
+          description: State map.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: { type: string }
+    put:
+      tags: [State]
+      summary: Replace state
+      operationId: replaceState
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: { type: string }
+      responses:
+        '200': { description: State replaced. }
+    patch:
+      tags: [State]
+      summary: Patch state
+      operationId: patchState
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: { type: string }
+      responses:
+        '200': { description: State patched. }
+    delete:
+      tags: [State]
+      summary: Clear state
+      operationId: clearState
+      responses:
+        '200': { description: State cleared. }
+  /api/v2/diff:
+    get:
+      tags: [Diff]
+      summary: Get diff reports
+      operationId: getDiff
+      responses:
+        '200':
+          description: Diff reports.
+          content:
+            application/json:
+              schema: { type: object }
+    post:
+      tags: [Diff]
+      summary: Filter diff reports
+      operationId: filterDiff
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Filtered diff reports.
+          content:
+            application/json:
+              schema: { type: object }
+    delete:
+      tags: [Diff]
+      summary: Clear diff reports
+      operationId: clearDiff
+      responses:
+        '200': { description: Diff cleared. }
+  /api/v2/hoverfly/templating-data-source/csv:
+    get:
+      tags: [Templating Data]
+      summary: List CSV data sources
+      operationId: listCsvDataSources
+      responses:
+        '200':
+          description: CSV data sources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: object }
+    put:
+      tags: [Templating Data]
+      summary: Upsert CSV data source
+      operationId: upsertCsvDataSource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                data: { type: string }
+      responses:
+        '200': { description: Data source saved. }
+  /api/v2/hoverfly/templating-data-source/csv/{dataSourceName}:
+    delete:
+      tags: [Templating Data]
+      summary: Delete CSV data source
+      operationId: deleteCsvDataSource
+      parameters:
+        - name: dataSourceName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Data source deleted. }
+  /api/v2/shutdown:
+    delete:
+      tags: [System]
+      summary: Shut down Hoverfly
+      operationId: shutdown
+      responses:
+        '200': { description: Hoverfly shutting down. }
+components:
+  schemas:
+    Simulation:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            pairs:
+              type: array
+              items: { type: object }
+            globalActions: { type: object }
+        meta: { type: object }
+    Middleware:
+      type: object
+      properties:
+        binary: { type: string }
+        script: { type: string }
+        remote: { type: string }
+    Mode:
+      type: object
+      properties:
+        mode:
+          type: string
+          enum: [simulate, capture, modify, synthesize, spy, diff]
+        arguments: { type: object }
+    PostServeAction:
+      type: object
+      properties:
+        actionName: { type: string }
+        binary: { type: string }
+        script: { type: string }
+        delayInMs: { type: integer }
