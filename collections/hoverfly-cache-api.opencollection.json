@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin Cache API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cache",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/cache"
+          },
+          "docs": "Get cache"
+        },
+        {
+          "info": {
+            "name": "Clear cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/cache"
+          },
+          "docs": "Clear cache"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

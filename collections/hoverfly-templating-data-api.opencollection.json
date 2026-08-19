@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin Cache Templating Data API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Templating Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List CSV data sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/templating-data-source/csv"
+          },
+          "docs": "List CSV data sources"
+        },
+        {
+          "info": {
+            "name": "Upsert CSV data source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/templating-data-source/csv",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upsert CSV data source"
+        },
+        {
+          "info": {
+            "name": "Delete CSV data source",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/hoverfly/templating-data-source/csv/:dataSourceName",
+            "params": [
+              {
+                "name": "dataSourceName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete CSV data source"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

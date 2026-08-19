@@ -1,0 +1,184 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Admin Cache Hoverfly API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hoverfly",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Hoverfly configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly"
+          },
+          "docs": "Get Hoverfly configuration"
+        },
+        {
+          "info": {
+            "name": "Get CORS settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/cors"
+          },
+          "docs": "Get CORS settings"
+        },
+        {
+          "info": {
+            "name": "Get destination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/destination"
+          },
+          "docs": "Get destination"
+        },
+        {
+          "info": {
+            "name": "Set destination",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/destination",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set destination"
+        },
+        {
+          "info": {
+            "name": "Get middleware",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/middleware"
+          },
+          "docs": "Get middleware"
+        },
+        {
+          "info": {
+            "name": "Update middleware",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/middleware",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update middleware"
+        },
+        {
+          "info": {
+            "name": "Get mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/mode"
+          },
+          "docs": "Get mode"
+        },
+        {
+          "info": {
+            "name": "Set mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/mode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set mode"
+        },
+        {
+          "info": {
+            "name": "Get version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/version"
+          },
+          "docs": "Get version"
+        },
+        {
+          "info": {
+            "name": "Get usage metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/usage"
+          },
+          "docs": "Get usage metrics"
+        },
+        {
+          "info": {
+            "name": "Get upstream proxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/upstream-proxy"
+          },
+          "docs": "Get upstream proxy"
+        },
+        {
+          "info": {
+            "name": "Get PAC file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/pac"
+          },
+          "docs": "Get PAC file"
+        },
+        {
+          "info": {
+            "name": "Set PAC file",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/pac"
+          },
+          "docs": "Set PAC file"
+        },
+        {
+          "info": {
+            "name": "Delete PAC file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/hoverfly/pac"
+          },
+          "docs": "Delete PAC file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

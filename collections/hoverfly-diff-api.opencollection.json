@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin Cache Diff API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Diff",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get diff reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/diff"
+          },
+          "docs": "Get diff reports"
+        },
+        {
+          "info": {
+            "name": "Filter diff reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8888/api/v2/diff",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Filter diff reports"
+        },
+        {
+          "info": {
+            "name": "Clear diff reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/diff"
+          },
+          "docs": "Clear diff reports"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

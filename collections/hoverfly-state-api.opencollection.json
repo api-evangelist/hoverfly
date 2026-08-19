@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin Cache State API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "State",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/state"
+          },
+          "docs": "Get state"
+        },
+        {
+          "info": {
+            "name": "Replace state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/state",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace state"
+        },
+        {
+          "info": {
+            "name": "Patch state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://localhost:8888/api/v2/state",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Patch state"
+        },
+        {
+          "info": {
+            "name": "Clear state",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/state"
+          },
+          "docs": "Clear state"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

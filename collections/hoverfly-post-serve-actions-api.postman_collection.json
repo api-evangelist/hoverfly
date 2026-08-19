@@ -1,0 +1,268 @@
+{
+  "item": [
+    {
+      "id": "461e93fd-a2b4-4003-b023-673e2af3afeb",
+      "name": "Post-Serve Actions",
+      "description": {
+        "content": "Manage post-serve actions executed after responses are served.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c2820b5f-1a59-4761-98f9-4702e1981e37",
+          "name": "List post-serve actions",
+          "request": {
+            "name": "List post-serve actions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "post-serve-action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88de3a6b-171b-4229-b1b2-31f7476500a8",
+              "name": "Actions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "post-serve-action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"actionName\": \"string\",\n    \"binary\": \"string\",\n    \"script\": \"string\",\n    \"delayInMs\": 8396\n  },\n  {\n    \"actionName\": \"string\",\n    \"binary\": \"string\",\n    \"script\": \"string\",\n    \"delayInMs\": 9360\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a5a901a-8309-4385-b329-4d4d34dfc865",
+          "name": "Create or update post-serve action",
+          "request": {
+            "name": "Create or update post-serve action",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "post-serve-action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actionName\": \"<string>\",\n  \"binary\": \"<string>\",\n  \"script\": \"<string>\",\n  \"delayInMs\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e2ad6bac-0fd5-48f9-bd47-d42cd257a0d3",
+              "name": "Action saved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "post-serve-action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actionName\": \"<string>\",\n  \"binary\": \"<string>\",\n  \"script\": \"<string>\",\n  \"delayInMs\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8eca753c-4edb-4784-8a10-8d0aac854f5a",
+          "name": "Delete post-serve action",
+          "request": {
+            "name": "Delete post-serve action",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "hoverfly",
+                "post-serve-action",
+                ":actionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "actionName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "087201da-2d8b-46a4-b9fa-aa144ba1a966",
+              "name": "Action deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "hoverfly",
+                    "post-serve-action",
+                    ":actionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "actionName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8888",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "019dd04b-40d3-4a83-a10d-74c211018e71",
+    "name": "Hoverfly Admin Cache Post-Serve Actions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.\n\nContact Support:\n Name: Hoverfly Project",
+      "type": "text/plain"
+    }
+  }
+}

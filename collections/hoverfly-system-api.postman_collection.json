@@ -1,0 +1,91 @@
+{
+  "item": [
+    {
+      "id": "fdba744c-592f-4e00-a1b0-e7de9d6e9384",
+      "name": "System",
+      "description": {
+        "content": "System-level controls.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "949d3d8d-7675-443e-8794-35a8c6a8f180",
+          "name": "Shut down Hoverfly",
+          "request": {
+            "name": "Shut down Hoverfly",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "shutdown"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d132284-ea87-4f70-95db-1ab8d5f82e69",
+              "name": "Hoverfly shutting down.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "shutdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8888",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7bb42aea-b5b6-427f-8e58-fac56766e595",
+    "name": "Hoverfly Admin Cache System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.\n\nContact Support:\n Name: Hoverfly Project",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin Cache Simulation API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Simulation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/simulation"
+          },
+          "docs": "Get simulation"
+        },
+        {
+          "info": {
+            "name": "Append simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8888/api/v2/simulation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Append simulation"
+        },
+        {
+          "info": {
+            "name": "Replace simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/simulation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace simulation"
+        },
+        {
+          "info": {
+            "name": "Clear simulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/simulation"
+          },
+          "docs": "Clear simulation"
+        },
+        {
+          "info": {
+            "name": "Get simulation JSON schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/simulation/schema"
+          },
+          "docs": "Get simulation JSON schema"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

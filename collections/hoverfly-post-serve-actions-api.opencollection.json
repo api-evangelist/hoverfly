@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hoverfly Admin Cache Post-Serve Actions API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Post-Serve Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List post-serve actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8888/api/v2/hoverfly/post-serve-action"
+          },
+          "docs": "List post-serve actions"
+        },
+        {
+          "info": {
+            "name": "Create or update post-serve action",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8888/api/v2/hoverfly/post-serve-action",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update post-serve action"
+        },
+        {
+          "info": {
+            "name": "Delete post-serve action",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8888/api/v2/hoverfly/post-serve-action/:actionName",
+            "params": [
+              {
+                "name": "actionName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete post-serve action"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
