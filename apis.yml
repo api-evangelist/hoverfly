@@ -79,6 +79,8 @@ apis:
   humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
   baseURL: http://localhost:8888
   tags:
+  - journal
+  tags_raw:
   - Journal
   properties:
   - type: OpenAPI
@@ -143,6 +145,8 @@ apis:
   humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
   baseURL: http://localhost:8888
   tags:
+  - States
+  tags_raw:
   - State
   properties:
   - type: OpenAPI
