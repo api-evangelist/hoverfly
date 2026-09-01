@@ -92,7 +92,7 @@ apis:
   humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
   baseURL: http://localhost:8888
   tags:
-  - journal
+  - Journal
   tags_raw:
   - Journal
   properties:
