@@ -1,8 +1,7 @@
 aid: hoverfly
 name: Hoverfly
-description: >-
-  Hoverfly is an open source API simulation tool for creating realistic mock services and capturing-replaying HTTP
-  traffic for testing.
+description: Hoverfly is an open source API simulation tool for creating realistic mock services and capturing-replaying
+  HTTP traffic for testing.
 type: Index
 deliveryModel:
   model: self-hosted
@@ -31,11 +30,11 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hoverfly.png
 tags:
-  - Mocking
-  - Testing
+- Mocking
+- Testing
 url: https://raw.githubusercontent.com/api-evangelist/hoverfly/refs/heads/main/apis.yml
 created: '2026-03-25'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: hoverfly:hoverfly-cache-api
@@ -71,7 +70,7 @@ apis:
   - type: SourceCode
     url: https://github.com/SpectoLabs/hoverfly
 - aid: hoverfly:hoverfly-hoverfly-api
-  name: Hoverfly Hoverfly API
+  name: Hoverfly API
   description: Manage Hoverfly runtime configuration.
   humanURL: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
   baseURL: http://localhost:8888
@@ -203,27 +202,27 @@ apis:
   - type: SourceCode
     url: https://github.com/SpectoLabs/hoverfly
 common:
-  - type: IssueTracker
-    url: https://github.com/SpectoLabs/hoverfly/issues
-  - type: Releases
-    url: https://github.com/SpectoLabs/hoverfly/releases
-  - type: ContributionGuide
-    url: https://github.com/SpectoLabs/hoverfly/blob/master/CONTRIBUTING.md
-  - type: License
-    name: Apache-2.0
-    url: https://github.com/SpectoLabs/hoverfly/blob/master/LICENSE
-  - type: AgenticAccess
-    url: agentic-access/hoverfly-agentic-access.yml
-  - type: DomainSecurity
-    url: security/hoverfly-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/hoverfly
-  - type: Website
-    url: https://hoverfly.io
-  - type: Documentation
-    url: https://docs.hoverfly.io
-  - type: SourceCode
-    url: https://github.com/SpectoLabs/hoverfly
+- type: IssueTracker
+  url: https://github.com/SpectoLabs/hoverfly/issues
+- type: Releases
+  url: https://github.com/SpectoLabs/hoverfly/releases
+- type: ContributionGuide
+  url: https://github.com/SpectoLabs/hoverfly/blob/master/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/SpectoLabs/hoverfly/blob/master/LICENSE
+- type: AgenticAccess
+  url: agentic-access/hoverfly-agentic-access.yml
+- type: DomainSecurity
+  url: security/hoverfly-domain-security.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/hoverfly
+- type: Website
+  url: https://hoverfly.io
+- type: Documentation
+  url: https://docs.hoverfly.io
+- type: SourceCode
+  url: https://github.com/SpectoLabs/hoverfly
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
