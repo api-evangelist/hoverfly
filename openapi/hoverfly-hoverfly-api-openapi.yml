@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Admin Cache Hoverfly API
+  title: Admin Hoverfly API
   description: Hoverfly's Admin API provides programmatic control of a Hoverfly instance, including simulation management, mode and middleware configuration, journal and diff inspection, state management, caching, logging, templating data sources, and post-serve actions.
   version: '2.0'
   contact:
@@ -209,6 +209,15 @@ paths:
           description: PAC removed.
 components:
   schemas:
+    Middleware:
+      type: object
+      properties:
+        binary:
+          type: string
+        script:
+          type: string
+        remote:
+          type: string
     Mode:
       type: object
       properties:
@@ -223,15 +232,6 @@ components:
           - diff
         arguments:
           type: object
-    Middleware:
-      type: object
-      properties:
-        binary:
-          type: string
-        script:
-          type: string
-        remote:
-          type: string
 externalDocs:
   description: Hoverfly Admin API Reference
   url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
