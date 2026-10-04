@@ -209,6 +209,15 @@ paths:
           description: PAC removed.
 components:
   schemas:
+    Middleware:
+      type: object
+      properties:
+        binary:
+          type: string
+        script:
+          type: string
+        remote:
+          type: string
     Mode:
       type: object
       properties:
@@ -223,15 +232,6 @@ components:
           - diff
         arguments:
           type: object
-    Middleware:
-      type: object
-      properties:
-        binary:
-          type: string
-        script:
-          type: string
-        remote:
-          type: string
 externalDocs:
   description: Hoverfly Admin API Reference
   url: https://docs.hoverfly.io/en/latest/pages/reference/api/api.html
