@@ -37,7 +37,7 @@ tags:
 - Testing
 url: https://raw.githubusercontent.com/api-evangelist/hoverfly/refs/heads/main/apis.yml
 created: '2026-03-25'
-modified: '2026-09-16'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: hoverfly:hoverfly-cache-api
@@ -205,6 +205,10 @@ apis:
   - type: SourceCode
     url: https://github.com/SpectoLabs/hoverfly
 common:
+- url: https://hoverfly.io/blog
+  type: Blog
+- url: https://hoverfly.io/blog/rss.xml
+  type: BlogRSS
 - type: IssueTracker
   url: https://github.com/SpectoLabs/hoverfly/issues
 - type: Releases
